@@ -1,46 +1,30 @@
 using System;
-//using é usado para importar namespaces. É semelhante ao import em Java, onde você importa pacotes.
 
 namespace Trabalhob2
-//namespace é usado para organizar classes em grupos lógicos. É equivalente ao conceito de pacote em Java.
 {
-    public abstract class Product
+    class Program
     {
-        //classes abstratas funcionam de maneira semelhante a java 
-
-        protected String name;
-        protected double cost;
-      
-        
-
-        //Semelhante a um construtor em java, com algumas diferenças na sintaxe e no comportamento, tem diferença na chamada de construtores da classe base, utilizando 'base()'
-        //enquanto em java utilizamos o 'super()', em c# possuimos construtores estaticos que são usados para inicializar dados estáticos da classe ou realizar operações que devem ocorrer apenas uma vez, 
-        //quando a classe é carregada. E possuimos também construtores de copia, permitem criar uma instancia de uma classe com base nos valores de outra instancia da mesma classe
-        //em java da para implementar metodos de copia que realizam a mesma funcionalidade, mas não ha suporte nativo para construtores de copia.
-        public Product(String name, double cost)
+        static void Main(String[] args)
         {
-            this.name = name;
-            this.cost = cost;
+            Agricultural wheat = new Agricultural("Wheat", 100.00, 150);
+            Agricultural sugarCane = new Agricultural("Sugar Cane", 50, 100);
+            Agricultural coffe = new Agricultural("Coffe ", 20, 170);
+            Agricultural soy = new Agricultural("Soy", 10, 210);
+
+            Industrialized chips = new Industrialized("Chips", 15, 32);
+            Industrialized cookie = new Industrialized("Cookie", 17, 190);
+            Industrialized pizza = new Industrialized("Pizza", 43, 110);
+            Industrialized cheese = new Industrialized("Cheese", 25, 60);
+
+
+            List<Product> products = new List<Product>();
+            products.Add(sugarCane);
+            products.Add(coffe);
+            products.Add(soy);
+            products.Add(chips);
+            products.Add(cookie);
+            products.Add(pizza);
+            products.Add(cheese);
         }
-
-        
-
-        protected abstract double calculatePrice();
-        protected abstract double calculateTransport();
-
-
-        //em c#, a pratica comum é usar properties, que se comportam como metodos getters e setters, mas são acessadas como se fossem campos publicos, em a necessidade de chamar explicitamente métodos.
-        public String Name
-        {
-            get { return name; }
-            set { name = value; }
-        }
-
-        public double Cost
-        {
-            get { return cost;}
-            set { cost = value;}
-        }
-
     }
 }
