@@ -75,8 +75,8 @@ public class Agricultural : Product
 
     //O método ToString é utilizado para fornecer uma representação em string de um objeto
     //utilizamos $"" para interpolar valores diretamente na string, o que torna o código mais legível.
+    ////em vez de concatenar manualmente diferentes partes de uma string, a interpolação permite combinar valores variáveis diretamente na string de uma maneira mais legível e intuitiva.
     //As expressões dentro das chaves são avaliadas e os resultados são inseridos na string resultante.
-    //m vez de concatenar manualmente diferentes partes de uma string, a interpolação permite combinar valores variáveis diretamente na string de uma maneira mais legível e intuitiva.
     public override string ToString()
     {
         return $"Agricultural product: Name={name}, Cost={cost:C}, Kg={kg}, Price={calculatePrice():C}";
